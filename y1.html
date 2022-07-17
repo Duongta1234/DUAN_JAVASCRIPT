@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM</title>
+    <link rel="stylesheet" href="y1.css">
+    <script src="y1.js"></script>
+    <script>
+        var arrImg = []
+        arrImg[0] = "img/nike1.jpg";
+        arrImg[1] = "img/nike2.jpg";
+        arrImg[2] = "img/nike.jpg";
+        arrImg[3] = "img/nike4.jpg";
+        arrImg[4] = "img/nike5.jpg";
+        var i = 0
+        var img_auto
+        function next() {
+            i++;
+            document.getElementById("img-slider").src = arrImg[i]
+            if (i == arrImg.length - 1)
+                i = -1
+        }
+        function prev() {
+            i--;
+            document.getElementById("img-slider").src = arrImg[i]
+            if (i == arrImg.length - 1)
+                i = +1
+        }
+        function auto() {
+            i++;
+            document.getElementById("img-slider").src = arrImg[i]
+            if (i == arrImg.length - 1)
+                i = -1
+
+            img_auto = setTimeout(auto, 2000)
+        }
+        function stop() {
+            clearTimeout(img_auto)
+        }
+        window.onload = function () {
+            img_auto = setTimeout(auto, 2000)
+        }
+        function first() {
+            document.getElementById("img-slider").src = arrImg[0]
+        }
+        function last() {
+            document.getElementById("img-slider").src = arrImg[4]
+        }
+    </script>
+</head>
+<body>
+    <div id="layout">
+    <header>
+        
+        <form action="">
+            <input type="button" value="Đăng nhập">
+            <a href="y2.html"><input type="button" value="Đăng ký"></a>
+        </form>
+        <img src="img/nike.jpg" width="970" height="200">
+    </header>
+    <nav>
+        <p class="menu">
+            <a href="#">Trang chủ |</a>
+            <a href="#">Sản phẩm |</a>
+            <a href="y3.html">Mua hàng nhanh |</a>
+            <a href="#">Liên hệ </a>
+        </p>
+    </nav>
+    <article>
+        <div class="banner">
+            <img src="img/6.jpg" alt="" id="img-slider" width="970px" height="280px">
+            <hr>
+            <input type="button" value="First" onclick="first()">
+            <input type="button" value="Pre" onclick="prev()">
+            <input type="button" value="Stop" onclick="stop()">
+            <input type="button" value="Run" onclick="auto()">
+            <input type="button" value="Next" onclick="next()">
+            <input type="button" value="Last" onclick="last()">
+        </div>
+    </article>
+    <aside>
+            <div class="sp1">
+                <p class="tensp"><a href="">LOGO NIKE</a></p>
+                <img src="img/nike5.jpg" alt="">
+                <p class="giagoc">150$</p>
+                <p class="giamoi">148$</p>
+            </div>
+            <div class="sp1">
+                <p class="tensp"><a href="">LOGO NIKE</a></p>
+                <img src="img/nike5.jpg" alt="">
+                <p class="giagoc">150$</p>
+                <p class="giamoi">148$</p>
+            </div>
+            <div class="sp1">
+                <p class="tensp"><a href="">LOGO NIKE</a></p>
+                <img src="img/nike5.jpg" alt="">
+                <p class="giagoc">150$</p>
+                <p class="giamoi">148$</p>
+            </div>
+            <div class="spm">
+                <hr>
+                <p>SẢN PHẨM MỚI</p>
+            </div>
+            <div class="sp1">
+                <p class="tensp"><a href="">LOGO NIKE</a></p>
+                <img src="img/nike4.jpg" alt="">
+                <p class="giagoc">140$</p>
+                <p class="giamoi">123$</p>
+            </div>
+            <div class="sp1">
+                <p class="tensp"><a href="">LOGO NIKE</a></p>
+                <img src="img/nike4.jpg" alt="">
+                <p class="giagoc">140$</p>
+                <p class="giamoi">123$</p>
+            </div>
+            <div class="sp1">
+                <p class="tensp"><a href="">LOGO NIKE</a></p>
+                <img src="img/nike4.jpg" alt="">
+                <p class="giagoc">140$</p>
+                <p class="giamoi">123$</p>
+            </div>
+            <hr>
+        </div>
+    </aside>
+    <footer>Nguyễn Long Nhật</footer>
+</div>
+</body>
+</html>
